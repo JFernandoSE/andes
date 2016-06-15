@@ -1,0 +1,39 @@
+<div class="form-group">
+	<label for="name" translate="DETALLE"></label>
+	
+	
+
+	
+	<textarea class="form-control" name="textModel" id="textModel"
+		style="resize: vertical" ng-model="formData.textModel" rows="7" ng-change="validate();" maxlength="500"></textarea>
+	<div class="alert alert-warning" id="alerta"
+		ng-show="!formData.textModel">
+		<strong translate="ALERTA"></strong>
+	</div>
+	<div class="alert alert-warning " id="alerta"
+		ng-show="validate()==true">
+		<strong translate="TEMPLATE"></strong><strong><span ng-bind-html="'{{}}'|html"></span></strong>	
+	</div>
+</div>
+
+<div class="form-group">
+	
+	<label for="file" translate="SUBIR"></label>
+	<input type="file" name="file" id="enviarForm"
+		onchange="angular.element(this).scope().uploadFile()">{{retornoNombreOriginal}}
+		<span class="glyphicon glyphicon-remove" style="cursor: pointer;"
+			ng-hide="!retornoNombreOriginal" ng-click="deleteScreen()"></span>
+</div>
+
+
+<div class="form-group row">
+	<div class="col-xs-6 col-xs-offset-3">
+		<a ui-sref="form.summary" class="btn btn-block btn-info"
+			ng-disabled="!formData.textModel || validate()==true" translate="SECCION">
+			<span class="glyphicon glyphicon-circle-arrow-right"></span>
+		</a>
+	</div>
+</div>
+
+
+	

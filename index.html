@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Webticketing</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+<!-- CSS -->
+<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+
+<!-- JS -->
+<!-- load angular, nganimate, and ui-router -->
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="js/angular-animate.min.js"></script>
+<script type="text/javascript" src="js/angular-translate.min.js"></script>
+<script type="text/javascript" src="js/angular-resource.min.js"></script>
+<script type="text/javascript" src="js/angucomplete-alt.min.js"></script>
+<script src="js/Module/app.js"></script>
+<script src="js/Config/appConfig.js"></script>
+<script src="js/Config/securityFactory.js"></script>
+<script src="js/Config/configProperties.js"></script>
+<script src="js/Controller/appController.js"></script>
+<script src="js/Controller/adminController.js"></script>
+<script src="js/Config/adminFactory.js"></script>
+<!-- <script src="js/Controller/loginController.js"></script> -->
+<script src="js/Filter/htmlFilter.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</head>
+<!-- <body ng-controller="formController"> -->
+<body ng-app="formApp">
+
+	<!-- views will be injected here -->
+	<div class="container" style="position: relative;">
+
+
+		<div ui-view></div>
+	</div>
+
+<!-- 	<iframe name="sendFile" style="display: none;" hidden="hidden" width="0" -->
+<!-- 	height="0" tabindex="-1">	 -->
+
+<!-- 	</iframe> -->
+
+<!-- 	<form action="restapi/file/upload" id="myForm" name="myForm" style="display: none;" -->
+<!-- 		method="post" enctype="multipart/form-data" class="form-horizontal" -->
+<!-- 		role="form" target="sendFile"> -->
+<!-- 		<h3 translate="SUBIR">Subir archivo(Opcional)</h3> -->
+<!-- 		<div class="form-group"> -->
+<!-- 			<label for="exampleInputFile" translate="INPUT">File input</label>						 -->
+<!-- 		</div> -->
+
+<!-- 	</form> -->
+
+</body>
+</html>

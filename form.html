@@ -1,0 +1,56 @@
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+
+  <div id="form-container">
+
+			<div class="pull-left" translate="BIENVENIDA"
+				translate-values="{user:userFullName}"></div>
+
+
+			<div class="pull-right" ng-click="setLanguage(); getLanguage(varIdioma.languageId); 
+					changeLanguage(varIdioma.codigoIdioma)"><a><span class="glyphicon glyphicon-globe"></span> {{idioma}}</a></div>
+	  
+	  <div>
+	    <img ng-src="{{'img/banner_' + codigoIdioma + '.jpg'}}" class="img-responsive"></img>	    	    
+	  </div>	  
+	  
+
+	  
+	   <div class="alert alert-danger" role="alert" ng-hide="userCaller">
+  		{{'NOLOGIN' | translate}}
+	   </div>
+
+
+		
+	   <div ng-show="userCaller">
+
+  
+	      <div class="page-header text-center">
+	      
+	          <!-- the links to our nested states using relative paths -->
+	          <!-- add the active class if the state matches our ui-sref -->
+	          <div id="status-buttons" class="text-center">
+	              <a ui-sref-active="active" ui-sref=".category" translate="CATEGORIAMENU"></a>
+	              <a ui-sref-active="active" ui-sref=".detail" translate="DETALLEMENU"></a>
+	              <a ui-sref-active="active" ui-sref=".summary" translate="RESUMENMENU"></a>	              
+	          </div>          
+	          
+	      </div>
+	      
+	      <!-- use ng-submit to catch the form submission and use our Angular function -->
+	      <form id="signup-form" ng-submit="processForm()">
+	          <!-- our nested state views will be injected here -->
+	          <div id="form-views" ui-view></div>          
+	      </form>
+	      
+	  </div>
+  
+  </div>
+    
+<!--   <pre> -->
+<!--     {{ formData }} -->
+<!--   </pre> -->
+
+</div>
+</div>
+

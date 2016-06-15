@@ -1,0 +1,12 @@
+h3{
+	color: white;
+};
+
+#descripcion{
+	font-size: 2px;
+}
+
+ul:hover{
+    background-color: #d9655c;
+}
+

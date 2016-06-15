@@ -1,0 +1,49 @@
+<div class="text-center">
+<!--     <span class="glyphicon glyphicon-heart"></span> -->
+<!--     <h3 translate="RESUMEN"></h3> -->
+<!--     <h4> -->
+<!--     	{{selectedCategory.name}} / {{selectedSubcategory.name}} / {{nombreAccion}}  -->
+<!-- 			{{nombreCategoria}} / {{nombreSubcategoria}} / {{nombreAccion}} -->
+<!--     </h4> -->
+    <div class="row" ng-show="alternativeCallerName">
+		<div class="col-sm-3 alinear"><h4><b>{{'CLIENT' | translate}}:</b></h4></div>
+		<div class="col-sm-9 alinear"><h4>{{alternativeCallerName}}</h4></div>
+	</div>
+    
+	<div class="row">
+		<div class="col-sm-3 alinear"><h4><b>{{'REQUEST' | translate}}:</b></h4></div>
+		<div class="col-sm-9 alinear"><h4>{{formData.selectedCategory.name}}</h4></div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-3 alinear"><h4><b>{{'OPTION' | translate}}:</b></h4></div>
+		<div class="col-sm-9 alinear"><h4>{{formData.selectedSubcategory.name}}</h4></div>
+	</div>
+	
+    <div class="row">
+		<div class="col-sm-3 alinear"><h4><b>{{'TASK' | translate}}:</b></h4></div>
+		<div class="col-sm-9 alinear"><h4>{{formData.selectedAction.name}}</h4></div>
+	</div>
+    
+    
+    <textarea class="form-control" name="textModel" id="textModel2" overflow="auto"
+		style="resize: vertical" rows="7" readonly="readonly">{{formData.textModel}}</textarea><br>
+    
+    <div ng-show="retornoNombreOriginal.length">
+    	<h4 translate="ARCHIVO" style="display: inline-block;"></h4>
+    	<h4 style="display: inline-block;">{{retornoNombreOriginal}}</h4>
+    </div>
+    
+    
+    <button type="button" class="btn btn-primary btn-lg btn-block"
+            ng-click="sendTicket()" translate="BOTON" 
+            ng-disabled="!formData.selectedCategory.name || !formData.selectedSubcategory.name || !formData.selectedAction.name || !formData.textModel || validate()==true">
+    </button><br>
+    <div class="col-sm-4 col-sm-offset-4">    
+    	<div class="alert alert-warning " id="alerta"
+		ng-show="!formData.selectedCategory.name || !formData.selectedSubcategory.name || !formData.selectedAction.name || !formData.textModel">
+		<strong translate="ALERTASEND"></strong>
+		</div>		
+    </div>
+    
+</div>

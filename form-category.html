@@ -1,0 +1,57 @@
+<div class="form-group" ng-show="isAnalyst">
+	<label translate="CLIENT"></label>
+	<div angucomplete-alt id="members"
+				  placeholder="{{'SEARCHEMPLOYEE' | translate}}"
+	              pause="300"
+	              selected-object="getAlternativeCaller"
+	              initial-value = "{{alternativeCallerName}}"
+	              input-changed = "clearRecipient"
+	              remote-url="restapi/employees/byname/?name="
+	              title-field="name,department"
+	              auto-match="true"
+	              minlength="4"
+	              input-class="form-control form-control-small">
+	</div>
+</div>
+
+
+<div class="form-group">
+	<label translate="REQUEST"></label>
+	<select class="form-control" id="category" ng-model="formData.selectedCategory" ng-options="category.name for category in categories | orderBy:'name'"
+		ng-change="getSubcategories(formData.selectedCategory.id);">
+	</select>
+<!-- 	<div>formData.selectedCategory id: {{formData.selectedCategory.id}}</div>	 -->
+</div>
+
+
+<div class="form-group">
+	<label translate="OPTION"></label>
+	<select class="form-control" id="subcategory" ng-model="formData.selectedSubcategory" ng-options="subcategory.name for subcategory in subcategories | orderBy:[orderName]"
+		ng-change="getActions(formData.selectedSubcategory.id);">
+	</select>
+<!-- 	<div>formData.selectedSubcategory id: {{formData.selectedSubcategory.id}}</div>	 -->
+	<div class="alert alert-info" role="alert" ng-show="formData.selectedSubcategory.subcatDesc" ng-bind="formData.selectedSubcategory.subcatDesc">
+<!--   		{{selectedSubcategory.subcatDesc}} -->
+	</div>
+
+</div>
+
+<div class="form-group">
+	<label translate="TASK"></label>
+
+	<select class="form-control" id="action" ng-model="formData.selectedAction" ng-options="action.name for action in actions.actionAssignmentDTO | orderBy:[orderName]"
+	ng-change="setTemplate();">
+	</select>
+<!-- 	<div>formData.selectedAction id: {{formData.selectedAction.id}}</div> -->
+
+</div>
+
+<div class="form-group row">
+	<div class="col-xs-6 col-xs-offset-3">
+			<a ui-sref="form.detail" class="btn btn-block btn-info" ng-disabled="!formData.selectedCategory.id ||
+			!formData.selectedSubcategory.id || !formData.selectedAction.id" translate="SECCION">
+			 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+			</a>
+
+	</div>
+</div>
